@@ -15,7 +15,7 @@ export default function AuthCardLayout({
 }>) {
     return (
         <div className="relative flex min-h-svh flex-col items-center justify-center gap-6 bg-cover bg-center bg-no-repeat md:p-10" style={{ backgroundImage: "url('/img/bgsublifacil.png')" }}>
-            <div className="absolute inset-0 bg-white/20 backdrop-blur-sm"></div>
+            <div className="absolute inset-0 bg-white/20 backdrop-blur-xs"></div>
             <div className="relative flex w-full max-w-md flex-col gap-6">
                 <Link href={home()} className="flex items-center gap-2 self-center font-medium">
                     <div className="flex h-9 w-9 items-center justify-center">
