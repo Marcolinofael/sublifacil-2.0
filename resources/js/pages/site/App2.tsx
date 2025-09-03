@@ -26,15 +26,15 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, del
     whileHover={{ scale: 1.05 }}
     className="h-full"
   >
-    <Card className="h-full hover:shadow-lg transition-shadow duration-300">
+    <Card className="h-full hover:shadow-lg transition-shadow bg-gray-800 border-gray-700">
       <CardHeader>
-        <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+        <div className="w-12 h-12 bg-blue-900 rounded-lg flex items-center justify-center mb-4">
           {icon}
         </div>
-        <CardTitle className="text-xl">{title}</CardTitle>
+        <CardTitle className="text-white">{title}</CardTitle>
       </CardHeader>
       <CardContent>
-        <CardDescription className="text-base">{description}</CardDescription>
+        <CardDescription className="text-gray-300">{description}</CardDescription>
       </CardContent>
     </Card>
   </motion.div>
@@ -48,17 +48,17 @@ interface TestimonialProps {
 }
 
 const Testimonial: React.FC<TestimonialProps> = ({ name, role, content, rating }) => (
-  <Card className="h-full">
-    <CardContent className="pt-6">
+  <Card className="h-full bg-gray-800 border-gray-700">
+    <CardContent className="p-6">
       <div className="flex mb-4">
         {[...Array(rating)].map((_, i) => (
-          <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+          <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
         ))}
       </div>
-      <p className="text-gray-600 mb-4">"{content}"</p>
+      <p className="text-gray-300 mb-4">"{content}"</p>
       <div>
-        <p className="font-semibold">{name}</p>
-        <p className="text-sm text-gray-500">{role}</p>
+        <p className="font-semibold text-white">{name}</p>
+        <p className="text-sm text-gray-400">{role}</p>
       </div>
     </CardContent>
   </Card>
@@ -68,23 +68,18 @@ function App() {
   const features = [
     {
       icon: <Zap className="w-6 h-6 text-blue-600" />,
-      title: "Gestão Simplificada",
-      description: "Interface intuitiva que facilita o gerenciamento completo do seu negócio de sublimação, desde pedidos até entrega."
+      title: "Criação Rápida",
+      description: "Desenvolva designs personalizados em minutos com nossas ferramentas avançadas de design."
     },
     {
       icon: <Package className="w-6 h-6 text-blue-600" />,
-      title: "Controle de Estoque",
-      description: "Monitore seus materiais, produtos e insumos em tempo real com alertas automáticos de reposição."
-    },
-    {
-      icon: <Palette className="w-6 h-6 text-blue-600" />,
-      title: "Designer Integrado",
-      description: "Crie e edite designs diretamente no sistema com ferramentas profissionais e pré-visualização em tempo real."
+      title: "Gestão de Estoque",
+      description: "Controle completo do seu inventário com alertas automáticos de reposição e relatórios detalhados."
     },
     {
       icon: <BarChart3 className="w-6 h-6 text-blue-600" />,
       title: "Relatórios Inteligentes",
-      description: "Acompanhe o desempenho do seu negócio com dashboards e relatórios detalhados e personalizáveis."
+      description: "Analise seu desempenho com dashboards intuitivos e métricas que realmente importam."
     },
     {
       icon: <Users className="w-6 h-6 text-blue-600" />,
@@ -120,21 +115,21 @@ function App() {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+    <div className="dark min-h-screen bg-gradient-to-br from-gray-900 to-gray-800">
       {/* Header */}
-      <header className="bg-white shadow-sm">
+      <header className="bg-gray-900 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex justify-between items-center">
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
                 <Palette className="w-5 h-5 text-white" />
               </div>
-              <h1 className="text-2xl font-bold text-gray-900">Sublifácil</h1>
+              <h1 className="text-2xl font-bold text-white">Sublifácil</h1>
             </div>
             <nav className="hidden md:flex space-x-8">
-              <a href="#recursos" className="text-gray-600 hover:text-blue-600 transition-colors">Recursos</a>
-              <a href="#como-funciona" className="text-gray-600 hover:text-blue-600 transition-colors">Como Funciona</a>
-              <a href="#depoimentos" className="text-gray-600 hover:text-blue-600 transition-colors">Depoimentos</a>
+              <a href="#recursos" className="text-gray-300 hover:text-blue-400 transition-colors">Recursos</a>
+              <a href="#como-funciona" className="text-gray-300 hover:text-blue-400 transition-colors">Como Funciona</a>
+              <a href="#depoimentos" className="text-gray-300 hover:text-blue-400 transition-colors">Depoimentos</a>
             </nav>
             <Button className="bg-blue-600 hover:bg-blue-700">
               Começar Agora
@@ -152,14 +147,14 @@ function App() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <Badge className="mb-4 bg-blue-100 text-blue-800 hover:bg-blue-200">
+              <Badge className="mb-4 bg-blue-900 text-blue-200 hover:bg-blue-800">
                 🚀 Sistema Completo para Sublimação
               </Badge>
-              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
                 Transforme seu negócio de
-                <span className="text-blue-600"> sublimação</span>
+                <span className="text-blue-400"> sublimação</span>
               </h1>
-              <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
                 O Sublifácil é a solução completa para gerenciar seu negócio de sublimação. 
                 Desde o controle de estoque até a criação de designs, tudo em uma plataforma intuitiva e poderosa.
               </p>
@@ -168,7 +163,7 @@ function App() {
                   Experimente Grátis
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
-                <Button size="lg" variant="outline" className="text-lg px-8 py-3">
+                <Button size="lg" variant="outline" className="text-lg px-8 py-3 border-gray-600 text-gray-300 hover:bg-gray-800">
                   Ver Demonstração
                 </Button>
               </div>
@@ -178,13 +173,13 @@ function App() {
       </section>
 
       {/* Features Section */}
-      <section id="recursos" className="py-20 bg-white">
+      <section id="recursos" className="py-20 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Recursos que fazem a diferença
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               Descubra como o Sublifácil pode simplificar e potencializar seu negócio de sublimação
             </p>
           </div>
@@ -204,66 +199,72 @@ function App() {
       </section>
 
       {/* How it Works Section */}
-      <section id="como-funciona" className="py-20 bg-gray-50">
+      <section id="como-funciona" className="py-20 bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Veja o Sublifácil em ação
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               Interface moderna e intuitiva que facilita todas as etapas do seu processo produtivo
             </p>
           </div>
-
+          
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
+              initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
               className="text-center"
             >
-              <img 
-                src={interfaceImage1} 
-                alt="Interface de Gerenciamento de Pedidos" 
-                className="rounded-lg shadow-lg mb-6 w-full"
-              />
-              <h3 className="text-xl font-semibold mb-2">Gerenciamento de Pedidos</h3>
-              <p className="text-gray-600">
-                Controle completo dos seus pedidos com status em tempo real e organização intuitiva
+              <div className="relative mb-8">
+                <img
+                  src={interfaceImage1}
+                  alt="Interface do Sublifácil - Dashboard"
+                  className="rounded-lg shadow-xl"
+                />
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-4">Dashboard Inteligente</h3>
+              <p className="text-gray-300">
+                Tenha uma visão completa do seu negócio com métricas em tempo real e insights valiosos.
               </p>
             </motion.div>
-
+            
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
               className="text-center"
             >
-              <img 
-                src={interfaceImage2} 
-                alt="Dashboard de Controle de Estoque" 
-                className="rounded-lg shadow-lg mb-6 w-full"
-              />
-              <h3 className="text-xl font-semibold mb-2">Controle de Estoque</h3>
-              <p className="text-gray-600">
-                Dashboard inteligente com alertas automáticos e visualização clara dos seus materiais
+              <div className="relative mb-8">
+                <img
+                  src={interfaceImage2}
+                  alt="Interface do Sublifácil - Editor de Design"
+                  className="rounded-lg shadow-xl"
+                />
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-4">Editor de Design</h3>
+              <p className="text-gray-300">
+                Crie designs incríveis com ferramentas profissionais integradas diretamente na plataforma.
               </p>
             </motion.div>
-
+            
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
+              initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
               className="text-center"
             >
-              <img 
-                src={interfaceImage3} 
-                alt="Editor de Designs Integrado" 
-                className="rounded-lg shadow-lg mb-6 w-full"
-              />
-              <h3 className="text-xl font-semibold mb-2">Editor de Designs</h3>
-              <p className="text-gray-600">
-                Crie e edite designs profissionais com pré-visualização em tempo real
+              <div className="relative mb-8">
+                <img
+                  src={interfaceImage3}
+                  alt="Interface do Sublifácil - Gestão de Pedidos"
+                  className="rounded-lg shadow-xl"
+                />
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-4">Gestão de Pedidos</h3>
+              <p className="text-gray-300">
+                Organize e acompanhe todos os seus pedidos de forma simples e eficiente.
               </p>
             </motion.div>
           </div>
@@ -271,17 +272,17 @@ function App() {
       </section>
 
       {/* Testimonials Section */}
-      <section id="depoimentos" className="py-20 bg-white">
+      <section id="depoimentos" className="py-20 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               O que nossos clientes dizem
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Histórias reais de empreendedores que transformaram seus negócios com o Sublifácil
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+              Descubra como o Sublifácil está transformando negócios de sublimação em todo o país
             </p>
           </div>
-
+          
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
               <motion.div
@@ -298,25 +299,25 @@ function App() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-blue-600">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-blue-700">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Pronto para revolucionar seu negócio?
             </h2>
-            <p className="text-xl text-blue-100 mb-8">
-              Junte-se a centenas de empreendedores que já transformaram seus negócios com o Sublifácil
+            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+              Junte-se a centenas de empreendedores que já transformaram seus negócios com o Sublifácil.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-3">
-                Começar Teste Grátis
+              <Button size="lg" variant="secondary" className="text-lg px-8 py-3">
+                Começar Teste Gratuito
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 text-lg px-8 py-3">
+              <Button size="lg" variant="outline" className="text-lg px-8 py-3 text-white border-white hover:bg-white hover:text-blue-600">
                 Falar com Especialista
               </Button>
             </div>
@@ -325,49 +326,37 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
+      <footer className="bg-gray-950 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
+            <div className="col-span-1 md:col-span-2">
               <div className="flex items-center space-x-2 mb-4">
                 <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
                   <Palette className="w-5 h-5 text-white" />
                 </div>
                 <h3 className="text-xl font-bold">Sublifácil</h3>
               </div>
-              <p className="text-gray-400">
-                A solução completa para seu negócio de sublimação.
+              <p className="text-gray-400 mb-4 max-w-md">
+                A plataforma completa para transformar e escalar seu negócio de sublimação com tecnologia de ponta.
               </p>
             </div>
-            
             <div>
               <h4 className="font-semibold mb-4">Produto</h4>
               <ul className="space-y-2 text-gray-400">
                 <li><a href="#" className="hover:text-white transition-colors">Recursos</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Preços</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Demonstração</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Integrações</a></li>
               </ul>
             </div>
-            
             <div>
               <h4 className="font-semibold mb-4">Suporte</h4>
               <ul className="space-y-2 text-gray-400">
                 <li><a href="#" className="hover:text-white transition-colors">Central de Ajuda</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Contato</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Treinamentos</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="font-semibold mb-4">Empresa</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">Sobre</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Carreiras</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Status</a></li>
               </ul>
             </div>
           </div>
-          
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
             <p>&copy; 2024 Sublifácil. Todos os direitos reservados.</p>
           </div>
@@ -378,4 +367,3 @@ function App() {
 }
 
 export default App
-
